@@ -50,10 +50,10 @@ public class t1 {
 
     @Test
     public void ttjiema(){
-        com.rj.yltrash.buttjoint.utils.EncrypAES encrypAES = null;
+        EncrypAES encrypAES = null;
         String s = new String();
         try {
-            encrypAES = new com.rj.yltrash.buttjoint.utils.EncrypAES("cCasPii07gV7");
+            encrypAES = new EncrypAES("cCasPii07gV7");
             String info = HexUtil.encodeHexStr("{wasteName:感染性废物,departmentTypeId:KoCjj4eSyQ5ZPPsEVGLD1c,hospitalId:cCasPii07gV7,wasteWeight:12.5,departmentId:2mw2wxLSAF4pkaYMhBFoi9,printDate:2022-05-23 10:04:42,wasteNumber:6666666666666666667},{wasteName:感染性废物,departmentTypeId:KoCjj4eSyQ5ZPPsEVGLD1c,hospitalId:cCasPii07gV7,wasteWeight:12.6,departmentId:2mw2wxLSAF4pkaYMhBFoi9,printDate:2022-05-23 11:04:42,wasteNumber:6666666666666666668}");
             s = encrypAES.decryptor("073DED39FF735A4F2A831A95FFB3AB728E7B46BCE34562B1BFBECB0D4EBC8229");
 //                constructId = new String(bytes, "UTF-8");

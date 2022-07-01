@@ -1,4 +1,4 @@
-package com.rj.yltrash.buttjoint.utils;
+package com.cc;
 
 import cn.hutool.core.util.HexUtil;
 

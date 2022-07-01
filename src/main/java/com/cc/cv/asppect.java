@@ -35,9 +35,9 @@ public class asppect {
         System.out.println(l+" 完成 " +l);
     }
 
-    @Around("execution(* com.cc.cv.*.*(..))")
-    public void ewtq(JoinPoint joinPoint){
-
-
-    }
+//    @Around("execution(* com.cc.cv.*.*(..))")
+//    public void ewtq(JoinPoint joinPoint){
+//
+//
+//    }
 }
