@@ -20,4 +20,14 @@ public class qrTest {
         File file = new File("");
 
     }
+
+    @Test
+    public void testfor(){
+        int f = 25;
+
+        for (int i = 0; i < f; i++) {
+            f--;
+            System.out.println(i);
+        }
+    }
 }

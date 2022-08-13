@@ -7,9 +7,12 @@ import lombok.extern.java.Log;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.ClientAnchor;
 import org.apache.poi.xssf.usermodel.XSSFClientAnchor;
+import org.checkerframework.checker.units.qual.C;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.annotation.PostConstruct;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.math.BigDecimal;
@@ -18,8 +21,13 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.concurrent.*;
 
 public class t2 {
+
+//    @Autowired
+//    ItemService queryItemService;
+
     @Test
     public void tfor(){
         int[] s = new int[]{4, 2, 9, 9, 4, 5, 8, 7, 5, 2, 1};
@@ -54,7 +62,18 @@ public class t2 {
         System.out.println(LocalDate.now());
         Date date = new Date();
         System.out.println(date);
+
+        Date d1 = new Date(1657754646546L);
+        Calendar c1 = Calendar.getInstance();
+        c1.setTime(d1);
+
         Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+
+        System.out.println(d1 + " " + (c1.get(Calendar.DAY_OF_YEAR) == calendar.get(Calendar.DAY_OF_YEAR)));
+
+        System.out.println("================================");
+
         System.out.println(calendar.get(Calendar.MONTH));
         System.out.println(calendar.get(Calendar.AM_PM));
         System.out.println(calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH));
@@ -68,6 +87,10 @@ public class t2 {
         }
 
         System.currentTimeMillis();
+
+        System.out.println(date.getTime());
+        System.out.println(date.getTime()+20);
+
     }
 
     private static final int BYTES_DEFAULT_LENGTH = 10240;

@@ -5,10 +5,14 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+import java.util.regex.Pattern;
 
 public class t1 {
 
@@ -66,11 +70,28 @@ public class t1 {
     }
 
     @Test
-    public void toei(){
-        LocalDateTime dateTime = LocalDateTime.now();
-        System.out.println(
-                dateTime
-        );
+    public void toei() throws ParseException {
+
+        Double d1 = new Double("1.2");
+        Double d2 = new Double("3.6");
+
+        double d3 = 5;
+        double d4 = 5;
+
+        String regex = "(19[0-9]{2}|20([0-9]{2}))-" +
+                "((0[469]|11)-([012][0-9]|30)|(0[13578]|1[02])-([012][0-9]|3[01])|(02-([01][0-9]|2[0-8])))";
+
+        String date = "0022-21-11-99";
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM");
+        Date parse = simpleDateFormat.parse(date);
+
+        System.out.println(parse);
+
+        System.out.println(Pattern.matches(regex, date));
+
+        System.out.println(d3 + ":" + d4 +(d4 == d3));
+
     }
 
     @Test
@@ -135,6 +156,14 @@ public class t1 {
                 "recycle_user_name=赵清理&time=1652944480258&salt=6D9C5F55320F07AAEEF4DD9BF6ED6D49").getBytes(), "ISO-8859-1");
         System.out.println(sss1);
         System.out.println(DigestUtils.md5Hex(sss1).toUpperCase());
+    }
+
+    private void threadTest() throws InterruptedException {
+        Date date = new Date();
+
+        Thread.sleep(100);
+        System.out.println(Thread.currentThread().getName() + " == nn");
+
     }
 
 }
